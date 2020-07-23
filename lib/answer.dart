@@ -17,7 +17,7 @@ class Answer extends StatelessWidget {
           onPressed: selectHandler,
           borderSide: BorderSide(color: Colors.blue),
           textColor: Colors.blue,
-          highlightedBorderColor: Colors.blue
+          // highlightedBorderColor: Colors.blue
         ),
     );
   }

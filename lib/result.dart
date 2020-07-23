@@ -15,7 +15,7 @@ class Result extends StatelessWidget {
     } else if (resultScore <= 16) {
       resultText = 'You are ... strange?';
     } else {
-      resultText = 'You are unlikeable';
+      resultText = 'You are unlikeable!';
     }
 
     return resultText;
@@ -25,19 +25,21 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            resultPhrase,
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+                      resultPhrase,
+                      style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
           ),
+          
           OutlineButton(
-            child: Text('Restart Quiz!'),
+            child: Text('Restart Quiz'),
             onPressed: resetHandler,
-            borderSide: BorderSide(color: Colors.blue),
-            textColor: Colors.blue,
-            highlightedBorderColor: Colors.blue
+            borderSide: BorderSide(color: Colors.blue, width: 1.0, style: BorderStyle.solid),
+            textColor: Colors.blue
           ),
         ],
       ),
