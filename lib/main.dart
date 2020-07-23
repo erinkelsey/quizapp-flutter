@@ -19,25 +19,49 @@ class _QuizAppState extends State<QuizApp> {
   final _questions = const [
       {
         'questionText' : 'What is your favorite color?', 
-        'answers' : ['Black', 'Red', 'Green', 'White']
+        'answers' : [
+          {'text': 'Black', 'score': 10}, 
+          {'text': 'Red', 'score': 6}, 
+          {'text': 'Green', 'score': 3}, 
+          {'text': 'White', 'score': 1},
+        ],
       },
       {
         'questionText' : 'What is your favorite animal?', 
-        'answers' : ['Leopard', 'Koala Bear', 'Fennec Fox', 'Sloth']
+        'answers' : [
+          {'text': 'Leopard', 'score': 6}, 
+          {'text': 'Koala Bear', 'score': 11}, 
+          {'text': 'Fennec Fox', 'score': 3}, 
+          {'text': 'Sloth', 'score': 1},
+        ],
       },
       {
         'questionText' : 'What is your favorite food?', 
-        'answers' : ['Burgers', 'Tacos', 'Noodles', 'Pizza']
+        'answers' : [
+          {'text': 'Burgers', 'score': 1}, 
+          {'text': 'Tacos', 'score': 1}, 
+          {'text': 'Noodles', 'score': 1}, 
+          {'text': 'Pizza', 'score': 1},
+        ],
       },
     ];
 
-  int _questionIndex = 0;
+  var _questionIndex = 0;
+  var _totalScore = 0;
 
-  void _answerQuestion(){
+  void _resetQuiz(){
     setState(() {
-        _questionIndex = _questionIndex + 1;
-        print(_questionIndex);
-      });
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+
+  void _answerQuestion(int score){
+    _totalScore += score;
+
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
 
     // print(Platform.isIOS);
     // print(kIsWeb);
@@ -53,7 +77,7 @@ class _QuizAppState extends State<QuizApp> {
               questionIndex: _questionIndex, 
               questions: _questions,
             )
-          : Result(),
+          : Result(_totalScore, _resetQuiz),
     ),
     );
   }
