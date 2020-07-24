@@ -10,7 +10,7 @@ Answer the quiz questions, by clicking on the button with your desired answer, t
 
 ## Install and Setup
 
-You will need Flutter installed, along with a number of dependencies for building and running iOS and Android apps on simulators. You can find the install instructions here: https://flutter.dev/docs/get-started/install/macos#web-setup
+You will need Flutter installed, along with a number of dependencies for building and running iOS and Android apps on simulators. You can find the install instructions here: https://flutter.dev/docs/get-started/install
 
 To run with web, follow the instructions here: https://flutter.dev/docs/get-started/web
 
