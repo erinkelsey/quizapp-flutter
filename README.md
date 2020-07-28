@@ -1,6 +1,6 @@
 ## About
 
-A simple Quiz app using Flutter and Dart for iOS, Android and web. 
+A simple Quiz app using Flutter and Dart for iOS, Android and web.
 
 Hosted web example here: http://quiz-app-flutter.s3-website.ca-central-1.amazonaws.com/
 
@@ -25,5 +25,5 @@ Run on a web browser (if you have installed support for running on web):
     $ flutter run -d chrome
 
 ## TODO
-   - Test cases
-   - Dart doc
+
+- Test cases
